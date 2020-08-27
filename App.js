@@ -1,29 +1,42 @@
-
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import{createAppContainer,createSwitchNavigator} from 'react-navigation';
+import  {View,Text,StyleSheet,TouchableOpacity} from 'react-native'
 import SplashScreen from './screens/SplashScreen';
 import HomeScreen from './screens/HomeScreen';
 import QuestionScreen from './screens/QuestionScreen';
 import ResultScreen from './screens/ResultScreen';
+import {createSwitchNavigator, createAppContainer} from 'react-navigation';
+
 
 
 export default class App extends React.Component{
-  render(){
-    return(
-      
+    render(){
+        return(
+           
+
 <AppContainer/>
-     
-    )
-  }
+    
+
+            
+            
+        )
+    }
 }
 
 const SwitchNavigator = createSwitchNavigator({
- Splash : {screen:SplashScreen},
-  Home : {screen: HomeScreen},
-  Question : {screen: QuestionScreen},
-  Result :{screen: ResultScreen}
+    Splash: {screen : SplashScreen},
+    Home : {screen:HomeScreen},
+    Question : {screen:QuestionScreen},
+    Result : {screen:ResultScreen}
 })
-
 const AppContainer = createAppContainer(SwitchNavigator)
+
+
+const styles = StyleSheet.create({
+    container :{
+        flex:1,
+        backgroundColor:'blue',
+        justifyContent:'center',
+        alignItems:'center'
+    }
+})
 
